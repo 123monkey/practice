@@ -1,0 +1,54 @@
+package com.practice.design.factory.pay;
+
+import com.alipay.api.domain.AlipayTradeAppPayModel;
+import com.alipay.api.request.AlipayTradeAppPayRequest;
+import com.alipay.api.response.AlipayTradeAppPayResponse;
+import com.practice.design.factory.config.AlipayPayClientConfig;
+import com.practice.design.factory.entity.PayOrderUnifiedReqDTO;
+import com.practice.design.factory.entity.PayOrderUnifiedRespDTO;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class AlipayAppPayClient
+        //extends AbstractAlipayClient
+        {
+
+   /* public AlipayAppPayClient(Long channelId, AlipayPayClientConfig config) {
+        super(channelId, PayChannelEnum.ALIPAY_APP.getCode(), config);
+    }
+
+    @Override
+    public PayOrderUnifiedRespDTO doUnifiedOrder(PayOrderUnifiedReqDTO reqDTO) throws Exception {
+        // 1.1 构建 AlipayTradeAppPayModel 请求
+        AlipayTradeAppPayModel model = new AlipayTradeAppPayModel();
+        // ① 通用的参数
+        model.setOutTradeNo(reqDTO.getMerchantOrderId());
+        model.setSubject(reqDTO.getSubject());
+        model.setBody(reqDTO.getBody());
+        model.setTotalAmount(formatAmount(reqDTO.getAmount()));
+        model.setProductCode(" QUICK_MSECURITY_PAY"); // 销售产品码：无线快捷支付产品
+        // ② 个性化的参数【无】
+        // ③ 支付宝扫码支付只有一种展示
+        String displayMode = PayDisplayModeEnum.APP.getMode();
+
+        // 1.2 构建 AlipayTradePrecreateRequest 请求
+        AlipayTradeAppPayRequest request = new AlipayTradeAppPayRequest();
+        request.setBizModel(model);
+        request.setNotifyUrl(reqDTO.getNotifyUrl());
+        request.setReturnUrl(reqDTO.getReturnUrl());
+
+        // 2.1 执行请求
+        AlipayTradeAppPayResponse response = client.execute(request);
+        // 2.2 处理结果
+        validateSuccess(response);
+        return new PayOrderUnifiedRespDTO()
+                .setDisplayMode(displayMode).setDisplayContent("");
+    }
+
+    private String formatAmount(Integer amount) {
+    }
+*/
+    private void validateSuccess(AlipayTradeAppPayResponse response) {
+    }
+
+}
